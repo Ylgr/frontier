@@ -214,8 +214,6 @@ impl pallet_grandpa::Config for Runtime {
 	type Event = Event;
 	type Call = Call;
 
-	type KeyOwnerProofSystem = ();
-
 	type KeyOwnerProof =
 		<Self::KeyOwnerProofSystem as KeyOwnerProofSystem<(KeyTypeId, GrandpaId)>>::Proof;
 
@@ -224,9 +222,14 @@ impl pallet_grandpa::Config for Runtime {
 		GrandpaId,
 	)>>::IdentificationTuple;
 
+	type KeyOwnerProofSystem = ();
+
 	type HandleEquivocation = ();
 
 	type WeightInfo = ();
+
+	type MaxAuthorities = MaxAuthorities;
+
 }
 
 parameter_types! {
