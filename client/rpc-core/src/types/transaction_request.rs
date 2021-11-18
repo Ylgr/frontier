@@ -30,6 +30,10 @@ pub enum TransactionMessage {
 	EIP2930(EIP2930TransactionMessage),
 	EIP1559(EIP1559TransactionMessage),
 }
+use std::{
+	collections::HashMap,
+	sync::{Arc, Mutex},
+};
 
 /// Transaction request coming from RPC
 #[derive(Debug, Clone, Default, Eq, PartialEq, Hash, Serialize, Deserialize)]
